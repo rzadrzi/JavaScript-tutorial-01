@@ -114,15 +114,21 @@ console.log({names,years});
  */
 // aproach 01
 var rezaDarzi = {
-    firstName:'Reza',
-    lastName:'Darzi',
-    birthday:1987,
-    job:'Digital Marketing',
-    isMarried:false
+    firstName: 'Reza',
+    lastName: 'Darzi',
+    birthday: 1987,
+    job: 'Digital Marketing',
+    isMarried: false,
+    // Objects and Methods
+    calAge: function(){
+        this.age = new Date().getFullYear() - this.birthday
+    }
 }
+rezaDarzi.calAge() //********************** this is important */
+
 console.log(rezaDarzi);
 console.log(rezaDarzi.firstName);
-console.log(rezaDarzi['firstName']);
+console.log(rezaDarzi['lastName']);
 
 rezaDarzi.job='Machine Learning Engineer'
 console.log(rezaDarzi['job']);
@@ -131,3 +137,4 @@ console.log(rezaDarzi['job']);
 var hamedDarzi = new Object()
 hamedDarzi['firstName'] = 'hamed';
 console.log(hamedDarzi);
+
