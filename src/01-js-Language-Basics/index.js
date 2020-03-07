@@ -100,8 +100,13 @@ var fun02 = function(firstName,lastName){
 }
 fun02('reza','darzi')
 
+/**
+ * Arrays
+ */
+var names = ['reza', 'hamed', 'leila', 'masoume', 'nasser']
+var years = new Array(1398, 1397, 1395, 1394)
 
-
+console.log({names,years});
 
 
 
