@@ -50,4 +50,27 @@ console.log('%c BMI challenge','color:green');
  }
  console.log(BMI(reza));
  console.log(BMI(hamed));
+
+
+ /**
+  * Truthy and Falsy Values and Equality Operators
+  * 
+  */
  
+  // Falsy Values -> undefined, null, 0, '', NaN
+  // Truthy Values -> NOT Falsy Values
+
+  var var01='';
+
+  switch (var01){
+    case undefined:
+    case null:
+    case 0:
+    case '':
+    // case NaN:
+        console.log('%c Falsy Variable','color:red');
+        break;
+    default:
+        console.log('%c Truthy Variable','color:green');
+                            
+  }
