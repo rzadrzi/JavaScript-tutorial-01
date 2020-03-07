@@ -12,23 +12,20 @@
 // Number
 var numb = 32.43;
 console.log(`1-Number: ${numb}`);
-
 // String
 var firstName = 'Reza';
 var lastName = 'Darzi';
 console.log(`2-String: ${firstName}-${lastName}`);
-
 // Boolean
 var bool = false;
 console.log(`3-Boolan: ${bool}`);
-
 // Undefined
 var undf;
 console.log(`4-Undefined: ${undf}`);
-
 // Null
 var nul=null;
 console.log(`5-Null: ${nul}`);
+
 
 /**
  * BMI challenge
@@ -75,6 +72,7 @@ console.log('%c BMI challenge','color:green');
                             
   }
 
+  
   /**
    * Functions
    */
@@ -82,6 +80,28 @@ console.log('%c BMI challenge','color:green');
    function AgeCal01(birthday){
        return new Date().getFullYear()-birthday
    }
-
    console.log(AgeCal01(1987));
    
+
+/**
+ * Function Statements and Expressions
+ */
+
+// Function Decoloration
+fun01('reza','darzi')//********************** this is important */
+function fun01(firstName, lastName){
+    console.log(`Full Name: ${firstName}-${lastName}`);
+}
+fun01('reza','darzi')
+
+// Function Expression
+var fun02 = function(firstName,lastName){
+    console.log(`Full Name: ${firstName}-${lastName}`);
+}
+fun02('reza','darzi')
+
+
+
+
+
+
