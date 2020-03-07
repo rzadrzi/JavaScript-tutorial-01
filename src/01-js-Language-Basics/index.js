@@ -74,3 +74,14 @@ console.log('%c BMI challenge','color:green');
         console.log('%c Truthy Variable','color:green');
                             
   }
+
+  /**
+   * Functions
+   */
+
+   function AgeCal01(birthday){
+       return new Date().getFullYear()-birthday
+   }
+
+   console.log(AgeCal01(1987));
+   
