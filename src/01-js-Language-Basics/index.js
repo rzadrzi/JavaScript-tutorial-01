@@ -109,4 +109,25 @@ var years = new Array(1398, 1397, 1395, 1394)
 console.log({names,years});
 
 
+/**
+ * Objects and Properties
+ */
+// aproach 01
+var rezaDarzi = {
+    firstName:'Reza',
+    lastName:'Darzi',
+    birthday:1987,
+    job:'Digital Marketing',
+    isMarried:false
+}
+console.log(rezaDarzi);
+console.log(rezaDarzi.firstName);
+console.log(rezaDarzi['firstName']);
 
+rezaDarzi.job='Machine Learning Engineer'
+console.log(rezaDarzi['job']);
+
+// aproach 02
+var hamedDarzi = new Object()
+hamedDarzi['firstName'] = 'hamed';
+console.log(hamedDarzi);
