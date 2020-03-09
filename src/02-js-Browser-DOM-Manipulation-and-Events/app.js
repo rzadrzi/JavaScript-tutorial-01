@@ -9,11 +9,45 @@ GAME RULES:
 
 */
 
-
-var scores, roundScore, activePlayer, dice
+var scores, roundScore, activePlayer, dice;
 
 scores = [0, 0];
 roundScore = 0;
 activePlayer = 0;
 
-dice = Math.floor(Math.random() * 6) + 1
+document.querySelector(`#score-0`).textContent = '0';
+document.querySelector(`#score-1`).textContent = '0';
+document.querySelector(`#current-0`).textContent = '0';
+document.querySelector(`#current-1`).textContent = '0';
+
+document.querySelector('.dice').style.display = 'none';
+
+document.querySelector('.btn-roll').addEventListener('click',function(e){
+    
+    // 1. Random number
+    dice = Math.floor(Math.random() * 6) + 1;
+
+    // 2. Display the result
+    var diceDOM = document.querySelector('.dice');
+    diceDOM.style.display = 'block';
+    diceDOM.src=`dice-${dice}.png`;
+
+    // 3. Update the round score IF the rolled was NOT a 1
+    if(dice !== 1){
+        // Add score
+        roundScore += dice;
+        document.querySelector(`#current-${activePlayer}`).textContent = roundScore;
+    }else{
+        // Next player
+        activePlayer = activePlayer === 0 ?  1 : 0;
+        roundScore = 0;
+
+        document.querySelector(`#current-0`).textContent = '0';
+        document.querySelector(`#current-1`).textContent = '0';
+
+        document.querySelector(`.player-0-panel`).classList.toggle('active');
+        document.querySelector(`.player-1-panel`).classList.toggle('active');
+
+        document.querySelector('.dice').style.display = 'none';
+    }
+})
