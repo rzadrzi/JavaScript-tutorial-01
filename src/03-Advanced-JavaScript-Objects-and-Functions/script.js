@@ -21,6 +21,7 @@ console.log(reza);
 */
 
 // Object.create
+/*
 var personPrototype = {
     calAge: function(){
         return new Date().getFullYear() - this.yearOfBirthday;
@@ -36,4 +37,39 @@ var reza = Object.create(personPrototype,{
 reza.age = reza.calAge()
 console.log(reza);
 console.log(reza.calAge());
+*/
+
+// Primitives vs Objects
+
+// Primitives
+var a = 23;
+var b = a;
+a = 46;
+console.log('a =',a); // 46
+console.log('b =',b); // 23
+// the value of a copied to variable b
+
+// Objects
+var obj1 = {name: 'Reza', age:32};
+var obj2 = obj1;
+var obj3 = { ...obj1 }; //************* IMPORTANT */
+obj1.age = 23;
+
+console.log(obj1); // {name: "Reza", age: 23}
+console.log(obj2); // {name: "Reza", age: 23}
+console.log(obj3); // {name: "Reza", age: 32}
+
+// Functions
+var obj = {name: 'Reza', age:32};
+var width = 78;
+
+function change(a, b){
+    a.name = 'Hamed';
+    b = 90;
+}
+
+change(obj,width)
+
+console.log(obj); // {name: 'Hamed', age:32}
+console.log(width); // 78
 
