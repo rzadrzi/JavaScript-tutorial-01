@@ -73,3 +73,27 @@ change(obj,width)
 console.log(obj); // {name: 'Hamed', age:32}
 console.log(width); // 78
 
+// First Class Functions Passing Functions as Arguments
+var years = [1990, 1987, 1974, 1950, 2012];
+
+function arrayCal(arr,fun){
+    var arrRes = [];
+    for(var i=0; i< arr.length; i++){
+        arrRes.push(fun(arr[i]));
+    }
+    return arrRes
+}
+
+function calculateAge(el){
+    return new Date().getFullYear() - el;
+}
+
+function isFullAge(el){
+    return el >= 18;
+}
+
+var newAge = arrayCal(years,calculateAge);
+var fullAges = arrayCal(newAge,isFullAge)
+console.log(newAge);
+console.log(fullAges);
+
