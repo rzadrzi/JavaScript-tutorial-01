@@ -97,3 +97,25 @@ var fullAges = arrayCal(newAge,isFullAge)
 console.log(newAge);
 console.log(fullAges);
 
+// First Class Functions Functions Returning Functions
+function interviewQuestion(job){
+    switch(job){
+        case 'designer':
+            return function(name){
+                console.log(`${name}, can you explain UI/UX ?`);
+            }
+        case 'teacher':
+            return function(name){
+                console.log(`${name}, What subject do you teach ?`);
+            }
+        default:
+            console.log(`we do not have any job for ${job}`);
+            
+    }
+}
+
+var designerinterviewQuestion = interviewQuestion('designer');
+designerinterviewQuestion('Reza');
+
+designerinterviewQuestion()
+interviewQuestion('teacher')('Hamed');
