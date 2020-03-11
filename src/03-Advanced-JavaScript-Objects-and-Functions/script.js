@@ -3,7 +3,7 @@
 // Primitives -> Numbers, Strings, Booleans, Undefined, Null
 // Objects -> Array, Functions, Objects, Dates, Wrappers of Numbers, Strings aanndd ..........
 
-/*
+
 var Person = function(name, yearOfBirthday, job){ // Person is constructor function
     this.name = name;
     this.yearOfBirthday = yearOfBirthday;
@@ -18,10 +18,10 @@ Person.prototype.calAge = function(){
 var reza = new Person('reza', 1987, 'Digital Marketing');
 
 console.log(reza);
-*/
+
 
 // Object.create
-/*
+
 var personPrototype = {
     calAge: function(){
         return new Date().getFullYear() - this.yearOfBirthday;
@@ -37,7 +37,7 @@ var reza = Object.create(personPrototype,{
 reza.age = reza.calAge()
 console.log(reza);
 console.log(reza.calAge());
-*/
+
 
 // Primitives vs Objects
 
@@ -116,6 +116,28 @@ function interviewQuestion(job){
 
 var designerinterviewQuestion = interviewQuestion('designer');
 designerinterviewQuestion('Reza');
+designerinterviewQuestion();
 
-designerinterviewQuestion()
 interviewQuestion('teacher')('Hamed');
+
+// Immediately Invoked Function Expressions (IIFE) Data Privecy
+(function (){
+    var score = Math.random() * 10;
+    console.log(score >= 4);
+})();
+
+(function (goodLuck){
+    var score = Math.random() * 10;
+    console.log(score >= 4 - goodLuck);
+})(4);
+
+// Closures
+function retirement(retirementAge){
+    var sentence = ' years util to retirement';
+    return function (yearOfBirth){
+        var age = new Date().getFullYear() - yearOfBirth;
+        console.log(retirementAge - age + sentence);
+    }
+}
+
+retirement(65)(1987)
